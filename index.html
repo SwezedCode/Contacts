@@ -22,6 +22,7 @@
             a {
                 font-family: monospace;
                 text-decoration: none;
+		color: white;
             }
             
             link {
@@ -54,7 +55,7 @@
 	    #github-projects {
 		box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2);
     		padding: 16px;
-    		text-align: right;
+    		text-align: left;
     		background-color: #2E2E2E;
 		color: white;
     		font-family: monospace;
@@ -75,7 +76,7 @@
 	    $(document).ready(function() {
 	    $.get("https://api.github.com/users/SwezedCode/repos", function(data) {
       		for(i = 0; i < data.length; i++) {
-        	    $("#github-projects").append('<a class="project" target="_blank" href="' + data[i]["html_url"] + '">' + data[i]["name"] + '<p>' + data[i]["description"] + '<br><i class="material-icons">language</i> ' + data[i]["language"] + '<br><i class="material-icons">star</i> ' + data[i]["stargazers_count"] + '</p></a>');
+        	    $("#github-projects").append('<a class="project" target="_blank" href="' + data[i]["html_url"] + '">' + data[i]["name"] + ' (' + data[i]["description"] + ')<br><i class="material-icons">language</i> ' + data[i]["language"] + '<br><i class="material-icons">star</i> ' + data[i]["stargazers_count"] + '</p></a>');
 		}
             });
 	    });
