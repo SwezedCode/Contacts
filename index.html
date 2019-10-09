@@ -62,7 +62,7 @@
     		position: relative;
 	    }
 		
-	    #github-projects:hover {
+	    #.proj:hover {
 		box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2);
     		padding: 16px;
     		text-align: left;
@@ -86,7 +86,7 @@
 	    $(document).ready(function() {
 	    $.get("https://api.github.com/users/SwezedCode/repos", function(data) {
       		for(i = 0; i < data.length; i++) {
-        	    $("#github-projects").append('<h4><a class="project" target="_blank" href="' + data[i]["html_url"] + '">' + data[i]["name"] + '<p>' + data[i]["description"] + '<br>Language <i>' + data[i]["language"] + '</i>' + '</p></a></h4>');
+        	    $("#github-projects").append('<h4 class="proj"><a class="project" target="_blank" href="' + data[i]["html_url"] + '">' + data[i]["name"] + '<p>' + data[i]["description"] + '<br>Language <i>' + data[i]["language"] + '</i>' + '</p></a></h4>');
 		}
             });
 	    });
